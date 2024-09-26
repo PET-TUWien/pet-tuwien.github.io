@@ -17,7 +17,7 @@
                 {{ range where .Site.RegularPages "Params.section" "Teaching/Courses" }}
                 {{if $odd}}
                 {{- $idtitle := printf "title%d" (crypto.FNV32a (printf "%s" .Title))}}
-                    <div class="pt-3" id="{{$idtitle}}" style="display: none;">
+                    <div class="pt-3" id="{{$idtitle}}">
                         {{ partial "card_course.html" (dict  "Campo" .Params.campo "Title" .Title  "Content" .Content "Credits" .Params.credits "Term" .Params.term 
                         "Level" .Params.level "Type" .Params.type "Theory" .Params.theory "Practice" .Params.practice "Context" .) }}
                     </div>
@@ -32,7 +32,7 @@
                 {{ range where .Site.RegularPages "Params.section" "Teaching/Courses" }}
                 {{if $odd}}
                 {{- $idtitle := printf "title%d" (crypto.FNV32a (printf "%s" .Title))}}
-                    <div class="pt-3" id="{{$idtitle}}"  style="display: none;">
+                    <div class="pt-3" id="{{$idtitle}}"  >
                         {{ partial "card_course.html" (dict "Campo" .Params.campo "Title" .Title "Content" .Content "Credits" .Params.credits  "Term" .Params.term 
                         "Level" .Params.level "Type" .Params.type "Theory" .Params.theory "Practice" .Params.practice "Context" .) }}
                     </div>

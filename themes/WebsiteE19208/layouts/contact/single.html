@@ -1,0 +1,7 @@
+{{ define "main" }}
+
+<!--to render Head and Head's Assistant as Single-->
+{{ partial "employee.html" (dict "Title" .Title "Function" .Params.function "Adress" 
+    .Params.Adress "Room" .Params.room "Mail" .Params.mail "Tel" .Params.tel "Image" .Params.imageG "Context" .)}}
+
+{{end}}

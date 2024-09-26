@@ -1,0 +1,17 @@
+{{ $lang_data := index site.Data site.Language.Lang}}
+
+<div class="card">
+    <div class="card-body">
+        <i class="bi bi-eyeglasses icon-50"></i> 
+        <h4 class="card-title">{{ .Title }}</h4>
+        <div class="card-body">
+            <h5>{{$lang_data.data.hardfacts}}</h5>
+            {{ .Employer }}<br>
+            {{ .Chair }}<br>
+            {{ .Location }}<br>
+            {{ .Time }}<br>
+            {{ .Requirement }}<br><br>
+            {{ .Content }} 
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="banner">
+    <div class="container">
+      <div class="row mb-3 align-content-center">
+        <div class="col-md-6 pt-3">
+          <h3>{{ .Title }}</h3>
+          {{- if .Function}}
+          {{ .Function }}
+          {{ end -}}
+          {{- if .Content }}
+          {{- .Content | markdownify}}
+          <br>
+          {{ end }}
+          {{if .ToContact}}
+          <a href="{{ .Link }}">
+            <i class="bi bi-person-rolodex black h2"></i>
+          </a>
+          {{end}}
+          <div class="row">
+            {{if .Git}}
+            <a href="{{ .Link }}">
+              <i class="bi bi-gitlab h1 gitorange"></i>
+            </a>
+            {{end}}
+          </div>
+        </div>
+        {{if .Map}}
+        <div class="col-md-6 pt-3">
+          <div class="h-100" style="text-align: right;">
+            <iframe src="{{ .Link }}" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        {{end}}
+        {{if .Image}}
+        <div class="col-md-6 pt-3">
+          <div class="h-100" style="text-align: right;">
+            {{partial "responsive_image.html" (dict "Image" .Image "Width" 400 "Height" 300)}}
+          </div>
+        </div>
+        {{end}}
+      </div>
+    </div>
+  </div>
+</div>

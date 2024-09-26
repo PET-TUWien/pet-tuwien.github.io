@@ -1,0 +1,86 @@
+{{ define "main"}}
+
+{{ $lang_data := index site.Data site.Language.Lang}}
+
+<!--Banner with bannerlanding.md-->
+{{ range where .Site.Pages "Params.bannerlanding" "!=" nil}}
+{{ partial "gallery.html" (dict "Title" .Title "Content" .Content "Image" .Params.image "Width" 400 "Height" 300)}}
+{{ end }}
+
+<!--show news-->
+<div class="container pt-3">
+   <h3> <i class="bi bi-newspaper"></i>{{$lang_data.data.recentNews}}</h3>
+   <div class="row justify-content-center">
+      <!--$sortedNewsPages contains a list of sorted News-md's after param 'latestNews'-->
+      {{ $sortedNewsPages := .Site.Pages.ByParam "latestNews" }}
+      <!--range sorted list-->
+      {{ range where $sortedNewsPages "Params.latestNews" "!=" nil }}
+      <div class="col-sm">
+         <!--CLickable, not with single but with link to News Single as md attribute-->
+         <!--With Single it were repeated unnecessarily-->
+         {{ partial "card_landing_news.html" (dict "Shorttitle" .Params.Shorttitle "Link" .Params.link "Content" .Content "Minirelease"
+         .Params.minirelease) }}
+      </div>
+      {{ end }}
+   </div>
+</div>
+<br>
+ 
+
+<!--show information for students-->
+<div class="banner">
+   <div class="container pt-3">
+      <h3> <i class="bi bi-backpack"></i>{{$lang_data.data.students}}</h3>
+      <!--row for three rows-->
+      <div class="row">
+         <div class="col-md-4">
+            {{ range where .Site.Pages "Params.landingcontent_C" "!=" nil}}
+            {{partial "card_forstudents_landing.html" (dict "Teaching" true "Title" .Title "Link" .Params.link "Content" .Content "Linkone"
+            .Params.linkone "Linktwo" .Params.linktwo )}}
+            {{end}}
+         </div>
+         <div class="col-md-4">
+            {{ range where .Site.Pages "Params.landingcontent_T" "!=" nil}}
+            {{partial "card_forstudents_landing.html" (dict "Thesis" true "Title" .Title "Link" .Params.link "Content" .Content "Linkone"
+            .Params.linkone )}}
+            {{end}}
+         </div>
+         <div class="col-md-4">
+            {{ range where .Site.Pages "Params.landingcontent_J" "!=" nil}}
+            {{partial "card_forstudents_landing.html" (dict "Jobs" true "Title" .Title "Link" .Params.link "Content" .Content "Linkone"
+            .Params.linkone)}}
+            {{end}}
+         </div>
+      </div>
+   </div>
+   <br>
+</div> 
+
+<!--show information for researchers-->
+<div class="container pt-3">
+   <h3> <i class="bi bi-search"></i>{{$lang_data.data.researchers}}</h3>
+   <div class="row">
+      <div class="col-md-4">
+         {{ range where .Site.Pages "Params.landingcontent_P" "!=" nil}}
+         {{partial "card_forresearchers_landing.html" (dict "Publications" true "Title" .Title "Link" .Params.link "Content" .Content 
+         "Linkone" .Params.linkone)}}
+         {{end}}
+      </div>
+      <div class="col-md-4">
+         {{ range where .Site.Pages "Params.landingcontent_R" "!=" nil}}
+         {{partial "card_forresearchers_landing.html" (dict "Researchareas" true "Title" .Title "Link"
+         .Params.link "Content" .Content  )}}
+         {{end}}
+      </div>
+   </div>
+</div>
+<br>
+
+<!--show contact-->
+{{ range where .Site.Pages "Params.contactus" "!=" nil}}
+{{ partial "gallery.html" (dict "Title" .Title "Content" .Content "ToContact" true "Link" .Params.link)}}
+{{end}}
+
+
+
+{{ end }}

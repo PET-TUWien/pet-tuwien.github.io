@@ -1,0 +1,28 @@
+{{ $lang_data := index site.Data site.Language.Lang}}
+
+<div class="row">
+  <div class="banner">
+    <div class="container">
+      <div class="row mb-3 align-content-center">
+        <div class="col-md-6 pt-3">
+          <h1>{{ .Title }}</h1>
+          <h3>{{ .Function }}</h3>
+          <i class="bi bi-geo-alt"></i> {{$lang_data.data.adress}}{{ .Adress }} <br>
+          <i class="bi bi-door-open pe-1"></i> {{$lang_data.data.room}}{{ .Room}} <br>
+          <i class="bi bi-envelope-at pe-1"></i> {{$lang_data.data.mail}}{{ .Mail }} <br>
+          <i class="bi bi-telephone pe-1"></i> {{$lang_data.data.tel}}{{ .Tel }}
+        </div>
+        <div class="col-md-6 pt-3">
+          <div class="h-100 text-end">
+            {{partial "responsive_image.html" (dict "Image" .Image "Width" 300 "Height" 350)}}
+          </div>
+        </div>
+      </div>
+      <div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container pt-4">
+          {{ .Context.Content | markdownify}}
+</div>

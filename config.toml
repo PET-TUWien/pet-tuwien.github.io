@@ -1,0 +1,18 @@
+theme = 'WebsiteE19208'
+title = 'Privacy Enhancing Technologies'
+baseURL = 'http://localhost:1313/'
+
+[params]
+logo = "/img/logos/pet_logo.png"
+fauLogo = "/img/logos/tuwien_logo.png"
+eavsdropper = "/img/logos/devil.png"
+author = "Tabea Stengl"
+title = "Website Privacy Enhancing Technologies"
+ustid = ""
+assetDir = "static"
+
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

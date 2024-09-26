@@ -1,0 +1,34 @@
+{{define "main"}}
+
+<!--banner in Banners/bannernews-->
+{{ range where .Site.Pages "Params.bannernews" "!=" nil}}
+{{partial "gallery.html" (dict "Title" .Title "Content" .Content "Image" .Params.image "Width" 400 "Height" 300)}}
+{{ end }}
+
+<div class="container pt-1">
+    <div class="row justify-content-center pb-3">
+        <div class="row">
+            <!--latestNews attribute ranges after temporally relevance-->
+            {{ range .Pages.ByParam "latestNews" }}
+            <div class="col-md-6 col-sm-10">
+                <div class="pt-3 h-100">
+                    {{ partial "card_news.html" (dict "Title" .Title "Shorttitle" .Params.shorttitle "Release" .Params.release "Content" .Content
+                    "Context" .) }}
+                </div> 
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+<!--YouTube and X-->
+<div class="container pt-3  pb-3">
+    <div class="text-center">
+        <a href="https://www.youtube.com/channel/UCriv-9bQeZ0uSgh46cms-Iw"
+            class="bi bi-youtube icon-50 p-3 red"></a>
+        <a href="https://twitter.com/i/flow/login?redirect_after_login=%2FChaAC_FAU"
+            class="bi bi-twitter-x icon-50 black"></a>
+    </div>
+</div>
+
+{{end}}

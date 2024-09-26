@@ -1,0 +1,93 @@
+.bg-img{
+    height : 100vh;
+    width : 100vw;
+    object-fit : cover;    
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: transparent !important;
+    color: inherit;
+  }
+
+button.accordion-button:focus{
+    box-shadow: inherit;
+}
+
+.stretched-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: auto;
+    content: "";
+    background-color: rgba(0,0,0,0);
+}
+
+.btn btn-info{
+    background-color:#0a0a23;
+}
+
+.banner {
+  background-color: #f7fafcff; /*light grey*/
+}
+
+.main-color {
+    background-color: #2a6495ff; /*main-color*/
+}
+
+.btn-info{
+    background-color: #c7e7f8 !important; /*main-color*/
+    border-color: #ffffff !important;
+}
+
+.blocksatz{
+    text-align: justify;
+    text-justify: auto;  
+    /*word-break: break-all;*/
+}
+
+.minibutton{
+        background-color: #c7e7f8 !important; /*main-color*/
+        border: none;
+        font-size: 10px;
+}
+
+.progress-bar-striped.t{
+    background-color: #c7e7f8; /*main-color*/
+}
+
+.progress-bar-striped.p{
+    background-color: #808080; /*dark grey*/
+}
+
+.card.teaching{
+background-color: #f7fafcff !important; /*light grey*/
+}
+
+.icon-50 { font-size: 30px; }
+
+.progress.ten{
+    background-color: #c7e7f8; /*main-color*/
+}
+
+.red{
+    color: #FF0000  !important; /*red*/
+}
+
+.gitorange{
+    color: #fc6d26 !important;
+}
+
+.black{
+    color: #0a0a23 !important;
+}
+
+.lightgrey{
+    background-color: #f7fafcff !important; /*light grey*/
+}
+
+.white{
+    background-color: #FFFFFF !important; /*white*/
+}

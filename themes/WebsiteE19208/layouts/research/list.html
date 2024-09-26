@@ -1,0 +1,39 @@
+{{ define "main"}}
+{{- $odd := true}}
+
+{{ range where .Site.Pages "Params.bannerresearch" "!=" nil}}
+{{partial "gallery.html"  (dict "Title" .Title "Content" .Content "Image" .Params.image "Width" 400 "Height" 300)}}
+{{ end }}
+
+<div class="container pt-1">
+    <div class="row justify-content-center pb-3">
+        <div class="col-md-6 col-sm-10">
+            <div class="row">
+                {{ range .Pages.ByTitle }}
+                {{if $odd}}
+                <div class="col-lg-12 pt-3">
+                    {{ partial "card_logo.html" (dict "Link" .Params.link "Image" .Params.image "Title" .Title "Content"
+                    .Content )}}
+                </div>
+                {{ end }}
+                {{$odd = not $odd}}
+                {{ end }}
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-10">
+            <div class="row">
+                {{$odd = false}}
+                {{ range .Pages.ByTitle }}
+                {{if $odd}}
+                <div class="col-lg-12 pt-3">
+                    {{ partial "card_logo.html" (dict "Link" .Params.link "Image" .Params.image "Title" .Title "Content"
+                    .Content )}}
+                </div>
+                {{ end }}
+                {{$odd = not $odd}}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

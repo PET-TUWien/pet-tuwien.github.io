@@ -1,0 +1,10 @@
+<div class="card h-100 lightgrey">
+    <div class="card-body">
+        <h4>{{ .Shorttitle }}</h4>
+        <button type="button" class="minibutton"> {{.Minirelease }}</button>
+        <a href="{{ .Link }}" class="stretched-link"></a>
+        <div class="card-text text-break blocksatz pt-2">
+            {{ .Content | truncate 140 "..." }}
+        </div>
+    </div>
+</div>

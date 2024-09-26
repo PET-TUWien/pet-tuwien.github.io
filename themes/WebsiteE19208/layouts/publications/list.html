@@ -1,0 +1,58 @@
+{{ define "main"}}
+
+{{ $lang_data := index site.Data site.Language.Lang}}
+
+{{ range where .Site.Pages "Params.bannerpubs" "!=" nil}}
+{{partial "gallery.html" (dict "Title" .Title "Content" .Content "Image" .Params.image "Width" 400 "Height" 300)}}
+{{ end }}
+
+<div class="container pt-3  pb-3">
+    <div class="accordion" id="accordionExample">
+
+        {{ $years := slice }}
+        {{ range where ($.Site.RegularPages) "Params.publication" "!=" nil }}
+        {{ $years = $years | append (path.Base .File.Dir) }}
+        {{ end }}
+        {{ $years = $years | uniq }}
+        {{ $years = sort $years "value" "desc"}}
+        {{- $collapseOne := true}}
+
+        {{ range $years }}
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse{{.}}" aria-expanded="false" aria-controls="collapse{{.}}">
+                    {{$lang_data.data.publications}} {{.}}
+                </button>
+            </h2>
+
+            <!--first accordion part is always open-->
+            {{if not $collapseOne }}
+            <div id="collapse{{.}}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                {{ end}}
+                {{if $collapseOne}}
+                <div id="collapse{{.}}" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    {{$collapseOne = not $collapseOne}}
+                    {{ end}}
+                    <div class="accordion-body">
+                        {{ $year := . }}
+                        <div class="row">
+                            {{ range where ($.Site.RegularPages) "Params.publication" "!=" nil }}
+                            {{ if eq (path.Base .File.Dir) $year}}
+                            <div class="col-lg-12 pt-3">
+                                {{ partial "card_publications.html" (dict "Title" .Title "Authors" .Params.authors
+                                "Conference" .Params.conference "Located" .Params.located "Location" .Params.location
+                                "ShowButton"
+                                true "Link" .Params.link ) }}
+                            </div>
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{end}}

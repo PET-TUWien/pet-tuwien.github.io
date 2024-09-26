@@ -1,0 +1,23 @@
+<div class="card h-100 white">
+   <div class="card-body">
+      {{if .Teaching}}
+      <a class="link-dark link-underline link-underline-opacity-0" href="{{ .Link }}">
+         <h4><i class="bi bi-book"></i> {{ .Title }}</h4></a>
+      {{end}}
+      {{if .Thesis}}
+      <h4><i class="bi bi-mortarboard"></i> {{ .Title }}</h4>
+      <a href="{{ .Link }}" class="stretched-link"></a>
+      {{end}}
+      {{if .Jobs}}
+      <h4><i class="bi bi-person-workspace"></i> {{ .Title }}</h4>
+      <a href="{{ .Link }}" class="stretched-link"></a>
+      {{end}}
+      {{ .Content }}
+      <div class="row">
+         <i><a href="https://www.campo.fau.de:443/qisserver/pages/startFlow.xhtml?_flowId=showCourseCatalog-flow&periodId=388&path=title%3A14215%7Ctitle%3A14218%7Ctitle%3A14713%7Cexam%3A6050044%7Cexam%3A6051112%7Cexam%3A6066565%7Cexam%3A6241462%7Cexam%3A6855116&navigationPosition=studiesOffered,courseoverviewShow" 
+            class="link-offset-2 link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover link-dark">{{ .Linkone }}</a></i>
+         <i><a href="https://www.campo.fau.de:443/qisserver/pages/startFlow.xhtml?_flowId=showCourseCatalog-flow&periodId=388&path=title%3A14215%7Ctitle%3A14218%7Ctitle%3A14713%7Cexam%3A6050040%7Cexam%3A6052983%7Cexam%3A6063514%7Cexam%3A6579294%7Cexam%3A6975785%7Cexam%3A7128378%7Cexam%3A7494301%7Cexam%3A7567271"
+            class="link-offset-2 link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover link-dark">{{.Linktwo }}</a></i>
+      </div>
+   </div>
+</div>

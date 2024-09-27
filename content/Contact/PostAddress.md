@@ -6,7 +6,7 @@ arrival = true
 draft = false
 +++
 
-Privacy Enhancing Technologies ((E192-08))  
+Privacy Enhancing Technologies (E192-08)
 Institute of Logic and Computation  
 TU Wien Informatics  
 Erzherzog Johann Platz 1  

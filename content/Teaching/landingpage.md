@@ -8,4 +8,4 @@ linktwo= 'Recent Advances in Cryptography'
 draft = false 
 +++
  
-Looking for exciting courses? You can attend the following courses in Summer Term 2024:
+Looking for exciting courses? Have a look at our course list. 

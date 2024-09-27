@@ -7,4 +7,3 @@ draft = false
 +++
 
 You can find our latest achievments and press coverage of our work here.
-Follow us for more with Links to X and YouTube at the end of this Site.

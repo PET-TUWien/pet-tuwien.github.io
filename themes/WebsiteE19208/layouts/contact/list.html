@@ -47,7 +47,10 @@
             <div class="col-md-6 col-sm-10">
                 <div class="row">
                     <!--to render ArrivalBy... cards-->
-                    {{ range where .Site.Pages "Params.arrival" "!=" nil}}
+                    {{ $pages := where .Site.Pages "Section" "contact" }}      <!-- Filter pages from the 'news' section -->
+                    {{ $childPages := where $pages "IsSection" "!=" true }}             <!-- Exclude the parent page (section) -->
+                    {{ $sortedPages := sort $childPages "Date" "desc" }}             <!-- Sort them by date in descending order -->
+                    {{ range $sortedPages }}   
                     {{if $odd}}
                     <div class="col-lg-12 pt-3">
                         {{ partial "card_contact.html" (dict "Title" .Title "Image" .Params.image "Content" .Content "Context" .)}}
@@ -60,7 +63,7 @@
             <div class="col-md-6 col-sm-10">
                 <div class="row">
                     {{$odd = false}}
-                    {{ range where .Site.Pages "Params.arrival" "!=" nil}}
+                    {{ range $sortedPages }}                       
                     {{if $odd}}
                     <div class="col-lg-12 pt-3">
                         {{ partial "card_contact.html" (dict "Title" .Title "Image" .Params.image "Content" .Content "Context" .)}}

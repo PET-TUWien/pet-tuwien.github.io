@@ -2,7 +2,7 @@
 title = 'Structure Of My Classes'
 section = 'Teaching/TeachingPhilosophy'
 date = 2023-11-14T21:13:49+01:00
-draft = false
+draft = true 
 +++
 
 My classes combine three elements, beginning with a self-study period, followed by guided learning, and ending with an independent learning phase:

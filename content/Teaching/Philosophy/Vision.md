@@ -5,4 +5,4 @@ section = 'Teaching/TeachingPhilosophy'
 draft = false
 +++
 
-ChaAC is an internationally recognized group for excellent research and teaching in the area of theory and practice of cryptography.
+Privacy Enhancing Technologies (E192-08) is an internationally recognized group for excellent research and teaching in the area of privacy.

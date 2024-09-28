@@ -1,17 +1,13 @@
 <div class="card h-100 white">
    <div class="card-body">
       {{if .Teaching}}
-      <a class="link-dark link-underline link-underline-opacity-0" href="{{ .Link }}">
          <h4><i class="bi bi-book"></i> {{ .Title }}</h4></a>
-      {{end}}
-      {{if .Thesis}}
+      {{else if .Thesis}}
       <h4><i class="bi bi-mortarboard"></i> {{ .Title }}</h4>
-      <a href="{{ .Link }}" class="stretched-link"></a>
-      {{end}}
-      {{if .Jobs}}
+      {{else if .Jobs}}
       <h4><i class="bi bi-person-workspace"></i> {{ .Title }}</h4>
-      <a href="{{ .Link }}" class="stretched-link"></a>
       {{end}}
+      <a href="{{ .Link }}" class="stretched-link"></a>
       {{ .Content }}
    </div>
 </div>

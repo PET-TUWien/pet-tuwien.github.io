@@ -1,11 +1,11 @@
 <div class="card h-100">
     <div class="card-body">
         <h4 class="card-title">{{ .Title }}</h4>
-        <h5 class="card-title text-secondary" >{{ .Shorttitle }}</h5> <!--{{ .Context.Params.shorttitle }} also possible-->
-        <button type="button" class="minibutton "> {{.Release }}</button>
+        <h5 class="card-title text-secondary" >{{ .Params.subtitle }}</h5> 
+        <button type="button" class="minibutton "> {{time.Format "January 2, 2006" .Params.Release}}</button>
         <div class="card-text text-break blocksatz pt-1">
             {{ .Content | truncate 400 "..." }}
         </div>
-        <a href="{{.Context.RelPermalink}}" class="stretched-link"></a>
+        <a href="{{.RelPermalink}}" class="stretched-link"></a>
     </div>
 </div>

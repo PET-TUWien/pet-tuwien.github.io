@@ -9,11 +9,13 @@
     <div class="row justify-content-center pb-3">
         <div class="row">
             <!--latestNews attribute ranges after temporally relevance-->
-            {{ range .Pages.ByParam "latestNews" }}
+            {{ $pages := where .Site.Pages "Section" "news" }}      <!-- Filter pages from the 'news' section -->
+            {{ $childPages := where $pages "IsSection" "!=" true }}             <!-- Exclude the parent page (section) -->
+            {{ $sortedPages := sort $childPages "Date" "desc" }}             <!-- Sort them by date in descending order -->
+            {{ range $sortedPages }}                
             <div class="col-md-6 col-sm-10">
                 <div class="pt-3 h-100">
-                    {{ partial "card_news.html" (dict "Title" .Title "Shorttitle" .Params.shorttitle "Release" .Params.release "Content" .Content
-                    "Context" .) }}
+                    {{ partial "card_news.html" .}}
                 </div> 
             </div>
             {{ end }}

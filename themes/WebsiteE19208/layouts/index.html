@@ -19,8 +19,7 @@
       <div class="col-sm">
          <!--CLickable, not with single but with link to News Single as md attribute-->
          <!--With Single it were repeated unnecessarily-->
-         {{ partial "card_landing_news.html" (dict "Shorttitle" .Params.Shorttitle "Link" .Params.link "Content" .Content "Minirelease"
-         .Params.minirelease) }}
+         {{ partial "card_landing_news.html" . }}
       </div>
       {{ end }}
    </div>

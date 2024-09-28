@@ -8,7 +8,7 @@ draft = false
 
 
 Vienna's public transport provides frequent connections between the airport and the city via bus or railway.
-To see the details of your 1h trip from the airport to our building, enter `Flughafen Wien` and `Favoritenstraße 9-11` in [this form](https://www.wienerlinien.at/web/wl-en/journey) or [that form](https://anachb.vor.at/).
+To see the details of your 1h trip from the airport to our building, enter `Flughafen Wien` and `Erzherzog Johann Platz 1` in [this form](https://www.wienerlinien.at/web/wl-en/journey) or [that form](https://anachb.vor.at/).
 
 Get an [airport ticket](https://www.wienerlinien.at/web/wl-en/airport-transfer).
 

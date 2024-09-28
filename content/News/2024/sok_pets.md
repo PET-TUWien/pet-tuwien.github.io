@@ -1,7 +1,7 @@
 +++
 title = "New Publication at PETS'25"
 subtitle = 'SoK: Descriptive Statistics Under Local Differential Privacy'
-date = 2024-09-16T12:08:20+02:00
+date = 2024-09-28T12:08:20+02:00
 release = 2024-09-16
 draft = false 
 +++

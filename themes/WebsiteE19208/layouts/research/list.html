@@ -1,9 +1,7 @@
 {{ define "main"}}
-{{- $odd := true}}
 
-{{ range where .Site.Pages "Params.bannerresearch" "!=" nil}}
-{{partial "gallery.html"  (dict "Title" .Title "Content" .Content "Image" .Params.image "Width" 400 "Height" 300)}}
-{{ end }}
+
+{{partial "gallery.html" (dict "Title" .Title "Content" .Content "Image" .Params.image "Width" 400 "Height" 300)}}
 
 <div class="container pt-1">
     <div class="row justify-content-center pb-3"></div>

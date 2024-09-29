@@ -8,14 +8,14 @@
 {{ end }}
 
 <!--show news-->
-<div class="container pt-3">
+<div class="container pt-3 pb-3">
    <h3> <i class="bi bi-newspaper"></i>{{$lang_data.data.recentNews}}</h3>
    <div class="row justify-content-center">
       <!--$sortedNewsPages contains a list of sorted News-md's after param 'latestNews'-->
-      {{ $pages := where .Site.Pages "Section" "news" }}      <!-- Filter pages from the 'news' section -->
-      {{ $childPages := where $pages "IsSection" "!=" true }}             <!-- Exclude the parent page (section) -->
-      {{ $sortedPages := sort $childPages "Date" "desc" }}             <!-- Sort them by date in descending order -->
-      {{ range first 3 $sortedPages }}    
+      {{ $pages := where .Site.Pages "Section" "news" }} <!-- Filter pages from the 'news' section -->
+      {{ $childPages := where $pages "IsSection" "!=" true }} <!-- Exclude the parent page (section) -->
+      {{ $sortedPages := sort $childPages "Date" "desc" }} <!-- Sort them by date in descending order -->
+      {{ range first 3 $sortedPages }}
       <div class="col-sm">
          <!--CLickable, not with single but with link to News Single as md attribute-->
          <!--With Single it were repeated unnecessarily-->
@@ -24,35 +24,75 @@
       {{ end }}
    </div>
 </div>
-<br>
- 
+
 
 <!--show information for students-->
-<div class="banner">
+<div class="banner pb-3">
    <div class="container pt-3">
       <h3> <i class="bi bi-backpack"></i>{{$lang_data.data.students}}</h3>
       <!--row for three rows-->
       <div class="row">
          <div class="col-md-4">
             {{ range where .Site.Pages "Params.landingcontent_C" "!=" nil}}
-            {{partial "card_forstudents_landing.html" (dict "Teaching" true "Title" .Title "Link" .Params.link "Content" .Content)}}
+            {{partial "card_forstudents_landing.html" (dict "Teaching" true "Title" .Title "Link" .Params.link "Content"
+            .Content)}}
             {{end}}
          </div>
          <div class="col-md-4">
             {{ range where .Site.Pages "Params.landingcontent_T" "!=" nil}}
-            {{partial "card_forstudents_landing.html" (dict "Thesis" true "Title" .Title "Link" .Params.link "Content" .Content )}}
+            {{partial "card_forstudents_landing.html" (dict "Thesis" true "Title" .Title "Link" .Params.link "Content"
+            .Content )}}
             {{end}}
          </div>
          <div class="col-md-4">
             {{ range where .Site.Pages "Params.landingcontent_J" "!=" nil}}
-            {{partial "card_forstudents_landing.html" (dict "Jobs" true "Title" .Title "Link" .Params.link "Content" .Content )}}
+            {{partial "card_forstudents_landing.html" (dict "Jobs" true "Title" .Title "Link" .Params.link "Content"
+            .Content )}}
             {{end}}
          </div>
       </div>
    </div>
-   <br>
-</div> 
+</div>
 
+<div class="container pt-3">
+   <h3> <i class="bi bi-magic"></i>{{$lang_data.data.research}}</h3>
+   <div class="row justify-content-center">
+      <div class="col-md-4">
+         <div class="card h-100 lightgrey">
+            <div class="card-body">
+               <h4>Research Areas</h4>
+               <a href="/research" class="stretched-link"></a>
+               <div class="card-text text-break blocksatz pt-2">
+                  We create methods to balance processing large data sets while protecting individual privacy. Our work spans from efficient information-theoretic approaches like differential privacy to privacy-enhancing cryptographic protocols.
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="card h-100 lightgrey">
+            <div class="card-body">
+               <h4>Publications</h4>
+               <a href="/publications" class="stretched-link"></a>
+               <div class="card-text text-break blocksatz pt-2">
+               We regularly publish our results at top-ranked scientific conferences and journals in the areas of privacy, security and cryptography. 
+            </div>
+         </div>
+      </div>
+      </div>
+      <div class="col-md-4">
+         <div class="card h-100 lightgrey">
+            <div class="card-body">
+               <h4>Reproducible Research</h4>
+               <a href="https://visualAnon.org" class="stretched-link"></a>
+               <div class="card-text text-break blocksatz pt-2">
+                  We develop and publish numerous open-source tools on to bring our research to a broader audience.
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </div>
+</div>
 
 
 

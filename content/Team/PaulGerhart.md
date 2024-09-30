@@ -1,9 +1,7 @@
 +++
 title = 'Paul Gerhart'
 date = 2023-11-18T15:36:01+01:00
-section = 'Team/AllStaff'
-number = '1'
-image = '/images/team_small/paulGerhart.png'
+image = '/images/team_small/paulGerhart.jpeg'
 mail = 'paul.gerhart [at] tuwien.ac.at'
 function = 'Scientific Staff (PhD)'
 room = 'FB 03 07'

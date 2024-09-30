@@ -1,18 +1,7 @@
 {{- $odd := true}}
 
-<!--
-<div class="card teaching">
-    <div class="card-body">
-        {{range where .Site.Pages "Params.courseinformation" "!=" nil}}
-        {{ .Content }}
-        {{end}}
-    </div>
-</div>
-<br>
 
--->
-
-<div class="d-none d-md-block">
+<div class="d-md-block">
     <div class="row justify-content-center pb-3">
         <div class="col-md-6 col-sm-10">
             <div class="row">
@@ -45,81 +34,3 @@
         </div>
     </div>
 </div>
-
-<script>
-
-    function dynamic_search(target_id, idtitle, idsummer, idwinter) {
-
-    var today = new Date();
-    // day is a string made out of exactly two numbers (zeroes at first)
-    var dd = String(today.getDate()).padStart(2, '0');
-    // month is a string made out of two numbers (zeroes at first)
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
-
-    today = dd + '/' + mm + '/' + yyyy;
-
-    var start = "01/04/2024";
-    var end = "30/09/2024";
-    var dateCheck = today;
-
-    var d1 = start.split("/");
-    var d2 = end.split("/");
-    var c = dateCheck.split("/");
-
-    //create new Dates out of the arrays d1,d2 and c made before
-    var from = new Date(d1[2], parseInt(d1[1]) - 1, d1[0]);  // -1 because months are from 0 to 11
-    var to = new Date(d2[2], parseInt(d2[1]) - 1, d2[0]);
-    var check = new Date(c[2], parseInt(c[1]) - 1, c[0]);
-
-    console.log(today)
-    console.log("Curent id:" + target_id)
-    console.log("Summerid:" + idsummer)
-    console.log("Winterid:" + idwinter)
-
-
-    //if currently in summer term
-    if(check >= from && check <= to){
-        if(target_id == idsummer){
-            console.log("yes")
-            document.getElementById(idtitle).style.display = "block";
-        }
-    }
-    //currently in winter term
-    else{
-        if(target_id == idwinter){
-            console.log("yes")
-            document.getElementById(idtitle).style.display = "block";
-        }
-    }
-
-}
-
-</script>
-
-<!--Give id's-->
-{{ range where .Site.RegularPages "Params.section" "Teaching/Courses"}}
-
-    <!--Build id from term-->
-    {{- $idterm := printf "courseterm%d" (crypto.FNV32a (printf "%s" .Params.term))}}
-    {{- $idtitle := printf "title%d" (crypto.FNV32a (printf "%s" .Title))}}
-    <!--Build id summer and winter as function parameter-->
-    <!--summer id:-->
-    {{- $idsummer := "" }}
-    {{- range .Site.RegularPages }}
-        {{- if eq .Params.examplesummer true }}
-            {{- $idsummer = printf "courseterm%d" (crypto.FNV32a (printf "%s" .Params.term)) }}
-        {{end}}
-    {{- end }}
-    <!--winter id:-->
-    {{- $idwinter := "" }}
-    {{- range .Site.RegularPages }}
-        {{- if eq .Params.examplewinter true }}
-            {{- $idwinter = printf "courseterm%d" (crypto.FNV32a (printf "%s" .Params.term)) }}
-        {{end}}
-    {{- end }}
-    <script>
-        dynamic_search("{{$idterm}}", "{{$idtitle}}" ,"{{$idsummer}}", "{{$idwinter}}")
-    </script>
-
-{{end}}

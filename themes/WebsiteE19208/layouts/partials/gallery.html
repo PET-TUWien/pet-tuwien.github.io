@@ -32,7 +32,7 @@
         </div>
         {{end}}
         {{if .Image}}
-        <div class="col-md-6 pt-3">
+        <div class="col-md-6 pt-3 d-none d-md-block">
           <div class="h-100" style="text-align: right;">
             {{partial "responsive_image.html" (dict "Image" .Image "Width" 400 "Height" 300)}}
           </div>

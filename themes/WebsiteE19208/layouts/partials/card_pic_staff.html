@@ -3,12 +3,10 @@
     <div class="col">
       {{partial "responsive_image.html" (dict "Image" .Image "Width" 120 "Height" 160)}}
     </div>
-    <div class="col-md-8">
+    <div class="col">
       <div class="card-body">
         <h5 class="card-title">{{ .Title }}</h5>
         {{ .Function }}
-        <br>
-        <br>
         <a href="{{.Context.RelPermalink}}" class="stretched-link"></a>
       </div>
     </div>

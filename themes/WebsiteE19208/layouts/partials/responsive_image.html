@@ -1,10 +1,10 @@
 
 {{ $path := .Image }}
-{{ $width := .Width }}
-{{ $height := .Height }}
+{{ $width := mul .Width 3 }}
+{{ $height := mul .Height 3 }}
 
 {{ $image := resources.Get $path }}
 {{ with $image }}
   {{ $new_size := .Resize (printf "%dx%d" $width $height) }}
-  <img src="{{ $new_size.Permalink }}" class="rounded object-fit-cover" alt="" width="{{ $new_size.Width }}" height="{{ $new_size.Height }}">
+  <img src="{{ $new_size.Permalink }}" class="rounded object-fit-cover" alt="" width="{{ div $new_size.Width 3 }}" height="{{div  $new_size.Height 3 }}">
 {{ end }}

@@ -63,6 +63,7 @@
     background-color: var(--btn-info-color) !important; /*main-color*/
     border: none;
     font-size: 10px;
+    color: var(--black-color) !important; /* Set the text color explicitly */
   }
   
   .progress-bar-striped.t {

@@ -9,20 +9,7 @@
           {{ end -}}
           {{- if .Content }}
           {{- .Content | markdownify}}
-          <br>
           {{ end }}
-          {{if .ToContact}}
-          <a href="{{ .Link }}">
-            <i class="bi bi-person-rolodex black h2"></i>
-          </a>
-          {{end}}
-          <div class="row">
-            {{if .Git}}
-            <a href="{{ .Link }}">
-              <i class="bi bi-gitlab h1 gitorange"></i>
-            </a>
-            {{end}}
-          </div>
         </div>
         {{if .Map}}
         <div class="col-md-6 pt-3">

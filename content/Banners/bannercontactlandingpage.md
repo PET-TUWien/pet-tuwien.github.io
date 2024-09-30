@@ -4,7 +4,7 @@ date = 2024-01-31T17:07:57+01:00
 contactus = true
 buttonone = 'Contact'
 buttononelink = '/contact/'
-link = 'http://localhost:1313/contact/'
+link = '/contact'
 draft = false 
 +++
 

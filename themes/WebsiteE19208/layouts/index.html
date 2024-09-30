@@ -39,19 +39,19 @@
       <div class="row">
          <div class="col-md-4">
             {{ range where .Site.Pages "Params.landingcontent_C" "!=" nil}}
-            {{partial "card_forstudents_landing.html" (dict "Teaching" true "Title" .Title "Link" .Params.link "Content"
+            {{partial "card_forstudents_landing.html" (dict "Teaching" true "Title" .Title "Link" "/teaching" "Content"
             .Content)}}
             {{end}}
          </div>
          <div class="col-md-4 pt-3 pt-md-0">
             {{ range where .Site.Pages "Params.landingcontent_T" "!=" nil}}
-            {{partial "card_forstudents_landing.html" (dict "Thesis" true "Title" .Title "Link" .Params.link "Content"
+            {{partial "card_forstudents_landing.html" (dict "Thesis" true "Title" .Title "Link" "/contact" "Content"
             .Content )}}
             {{end}}
          </div>
          <div class="col-md-4 pt-3 pt-md-0">
             {{ range where .Site.Pages "Params.landingcontent_J" "!=" nil}}
-            {{partial "card_forstudents_landing.html" (dict "Jobs" true "Title" .Title "Link" .Params.link "Content"
+            {{partial "card_forstudents_landing.html" (dict "Jobs" true "Title" .Title "Link" "/jobs" "Content"
             .Content )}}
             {{end}}
          </div>

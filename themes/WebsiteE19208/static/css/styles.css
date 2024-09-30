@@ -1,6 +1,6 @@
 :root {
     --main-color: #A2C6C2ff;
-    --light-grey: #A2C6C21A;
+    --light-grey: #A2C6C21A; /*this is the main color with 10% opacity*/
     --dark-grey: #808080;
     --red-color: #ff0000;
     --git-orange: #fc6d26;

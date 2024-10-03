@@ -1,6 +1,6 @@
 theme = 'WebsiteE19208'
 title = 'Privacy Enhancing Technologies'
-baseURL = 'http://localhost:1313/'
+baseURL = 'http://www.pets.wien'
 
 [params]
 logo = "/img/logos/pet_logo.png"

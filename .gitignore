@@ -1,7 +1,0 @@
-
-*.DS_Store
-public/**/*
-.hugo_build.lock
-todo.txt
-resources/*
-

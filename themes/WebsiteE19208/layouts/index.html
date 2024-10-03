@@ -3,9 +3,8 @@
 {{ $lang_data := index site.Data site.Language.Lang}}
 
 <!--Banner with bannerlanding.md-->
-{{ range where .Site.Pages "Params.bannerlanding" "!=" nil}}
 {{ partial "gallery.html" (dict "Title" .Title "Content" .Content "Image" .Params.image "Width" 400 "Height" 300)}}
-{{ end }}
+
 {{ $first := true}}
 <!--show news-->
 <div class="container pt-3 pb-3">

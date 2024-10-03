@@ -1,8 +1,6 @@
 {{ define "main"}}
 
-{{ range where .Site.Pages "Params.bannerteam" "!=" nil}}
 {{ partial "gallery.html"  (dict "Title" .Title "Content" .Content "Image" .Params.image "Width" 400 "Height" 300) }}
-{{ end }}
 
 {{- $odd := true}}
 

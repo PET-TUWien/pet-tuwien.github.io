@@ -1,9 +1,7 @@
 {{define "main"}}
 
 <!--banner, md in Banners/bannercontact-->
-{{ range where .Site.Pages "Params.bannercontact" "!=" nil}}
 {{ partial "gallery.html" (dict "Title" .Title "Content" .Content "Map" true "Link" .Params.link)}}
-{{ end }}
 
 <div class="container pt-1">
     <div class="row justify-content-center">

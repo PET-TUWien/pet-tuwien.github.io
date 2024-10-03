@@ -1,9 +1,7 @@
 {{define "main"}}
 
 <!--banner in Banners/bannernews-->
-{{ range where .Site.Pages "Params.bannernews" "!=" nil}}
 {{partial "gallery.html" (dict "Title" .Title "Content" .Content "Image" .Params.image "Width" 400 "Height" 300)}}
-{{ end }}
 
 <div class="container pt-1">
     <div class="row justify-content-center pb-3">

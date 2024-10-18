@@ -2,7 +2,7 @@
 title = 'People'
 date = 2023-11-22T20:51:09+01:00
 layout = 'people'
-image = '/images/banner_pics/team.png'
+image = '/images/banner_pics/team.jpg'
 draft = false 
 +++
 
